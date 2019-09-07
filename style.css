@@ -1,7 +1,40 @@
 .body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+}
+.header {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  border-radius: 25px;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.25);
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+.jumbotron {
+  background-color: transparent;
+}
+h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 600;
+}
+.quote {
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
 }
 .quotes__container {
+  background-color: #fdfdfd;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.25);
+}
+.height {
   height: 250px;
 }
 .quotes__list {
@@ -11,4 +44,30 @@
   font-size: 24px;
   font-family: "Sanchez", serif;
   line-height: 1.5;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+.quotes__type {
+  color: #8a8a8a;
+}
+.quotes__count {
+  color: #8a8a8a;
+}
+.quotes__count select {
+  width: 50px;
+}
+.btn {
+  font-size: 42;
+  font-weight: 600;
+}
+.btn-primary {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  border: none;
 }

@@ -55,6 +55,7 @@ let max = 5;
 let numberOfQuotes = 1;
 let radioBtn = document.getElementsByName("type");
 let generateQuoteBtn = document.querySelector("#generate-quote");
+let resetBtn = document.querySelector("#resetBtn");
 let quotesList = document.querySelector(".quotes__list");
 let quotesListContainer = document.querySelector(".quotes__container");
 /// generateRandomNumber
@@ -84,6 +85,7 @@ dropdown.addEventListener("change", e => {
 /// Button to generate quotes on click
 generateQuoteBtn.addEventListener("click", () => {
   quotesList.innerHTML = "";
+  quotesListContainer.classList.add("height");
   if (radioBtn[1].checked) {
     quotesListContainer.appendChild(
       getQuotes(numberOfQuotes, motivationQuotes)
@@ -91,4 +93,10 @@ generateQuoteBtn.addEventListener("click", () => {
   } else {
     quotesListContainer.appendChild(getQuotes(numberOfQuotes, loveQuotes));
   }
+});
+
+// Reset quotes DOM
+resetBtn.addEventListener("click", () => {
+  quotesList.innerHTML = "";
+  quotesListContainer.classList.remove("height");
 });
