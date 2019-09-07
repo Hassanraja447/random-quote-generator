@@ -1,3 +1,14 @@
 .body {
   font-family: "Roboto", sans-serif;
 }
+.quotes__container {
+  height: 250px;
+}
+.quotes__list {
+  list-style: none;
+}
+.quotes__item {
+  font-size: 24px;
+  font-family: "Sanchez", serif;
+  line-height: 1.5;
+}

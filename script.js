@@ -1,4 +1,4 @@
-let quotes = {
+let loveQuotes = {
   beginning: [
     "Don't bother yourself",
     "Something you missed",
@@ -24,9 +24,36 @@ let quotes = {
     "with life long."
   ]
 };
+let motivationQuotes = {
+  beginning: [
+    "Love is life",
+    "You don't have to do ",
+    "Work hard until",
+    "No one ever has a chance",
+    "In your entire life",
+    "Danger in life and life "
+  ],
+  middle: [
+    "coming to end",
+    "since than",
+    "to get hard on yourself",
+    "in life",
+    "you will see",
+    "fafe and tagpe"
+  ],
+  end: [
+    "fafe adfe.",
+    "to be sure.",
+    "again.",
+    "be youself.",
+    "your time will come.",
+    "with life long."
+  ]
+};
 let min = 0;
 let max = 5;
 let numberOfQuotes = 1;
+let radioBtn = document.getElementsByName("type");
 let generateQuoteBtn = document.querySelector("#generate-quote");
 let quotesList = document.querySelector(".quotes__list");
 let quotesListContainer = document.querySelector(".quotes__container");
@@ -34,29 +61,20 @@ let quotesListContainer = document.querySelector(".quotes__container");
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-const generateQuote = () => {
+const generateQuote = quotes => {
   let quoteEl = document.createElement("li");
+  quoteEl.classList.add("quotes__item");
   quoteEl.innerHTML = `${quotes.beginning[generateRandomNumber()]}  ${
     quotes.middle[generateRandomNumber()]
   } ${quotes.end[generateRandomNumber()]}`;
   return quoteEl;
 };
 /// Function to generate quotes by joining three sentence fragments
-const getQuotes = numberOfQuotes => {
-  console.log(numberOfQuotes);
-  // if(numberOfQuotes === 1) {
-  //   quoteEl = `${quotes.beginning[generateRandomNumber()]}  ${
-  //     quotes.middle[generateRandomNumber()]
-  //     } ${quotes.end[generateRandomNumber()]}`;
-  //   quotesList.appendChild(quoteEl);
-  //   return quotesList;
-  // }
-  // if (numberOfQuotes > 1) {
+const getQuotes = (numberOfQuotes, quotes) => {
   for (let i = 0; i < numberOfQuotes; i++) {
-    quotesList.appendChild(generateQuote());
+    quotesList.appendChild(generateQuote(quotes));
   }
   return quotesList;
-  // }
 };
 let dropdown = document.querySelector("#quotesCount");
 dropdown.addEventListener("change", e => {
@@ -66,5 +84,11 @@ dropdown.addEventListener("change", e => {
 /// Button to generate quotes on click
 generateQuoteBtn.addEventListener("click", () => {
   quotesList.innerHTML = "";
-  quotesListContainer.appendChild(getQuotes(numberOfQuotes));
+  if (radioBtn[1].checked) {
+    quotesListContainer.appendChild(
+      getQuotes(numberOfQuotes, motivationQuotes)
+    );
+  } else {
+    quotesListContainer.appendChild(getQuotes(numberOfQuotes, loveQuotes));
+  }
 });

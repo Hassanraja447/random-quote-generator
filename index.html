@@ -15,6 +15,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sanchez&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -39,15 +43,34 @@
         </div>
       </div>
       <div class="row">
-        <div class="col text-center">
-          <label for="quotesCount">Select Number of Quotes</label>
-          <select name="quotesNumber" id="quotesCount">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+        <div class="col d-flex justify-content-around">
+          <div class="quotes__type">
+            <p>Quotes type</p>
+            <div>
+              <input type="radio" id="love" name="type" value="love" checked />
+              <label for="love">Love</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="motivation"
+                name="type"
+                value="motivation"
+              />
+              <label for="motivation">Motivational</label>
+            </div>
+          </div>
+          <div>
+            <label for="quotesCount">Select Number of Quotes</label>
+            <select name="quotesNumber" id="quotesCount">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="row">
